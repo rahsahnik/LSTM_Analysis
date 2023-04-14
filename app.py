@@ -56,7 +56,7 @@ data_training_array = scaler.fit_transform(data_training)
 
 
 #loading the model
-rom keras.optimizers import Adam
+from keras.optimizers import Adam
 
 def custom_adam(lr=0.001):
     return Adam(lr=lr)

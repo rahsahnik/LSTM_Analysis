@@ -55,8 +55,14 @@ scaler = MinMaxScaler(feature_range=(0,1))
 data_training_array = scaler.fit_transform(data_training)
 
 
-#lr_track = get_lr_metric(adam)
-model = load_model('keras_model.h5', custom_objects={"lr":adam})
+from tensorflow.keras.optimizers import Adam
+
+def custom_adam(lr=0.001):
+    return Adam(lr=lr)
+
+custom_objects = {'CustomAdam': custom_adam}
+
+model = load_model('keras_model.h5', custom_objects=custom_objects)
 
 #Testing part 
 

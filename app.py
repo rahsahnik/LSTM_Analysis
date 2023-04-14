@@ -55,14 +55,14 @@ scaler = MinMaxScaler(feature_range=(0,1))
 data_training_array = scaler.fit_transform(data_training)
 
 
-from tensorflow.keras.optimizers import Adam as adam
+# from tensorflow.keras.optimizers import Adam as adam
 
-def custom_adam(lr=0.001):
-    return adam(lr=lr)
+# def custom_adam(lr=0.001):
+#     return adam(lr=lr)
 
-custom_objects = {'CustomAdam': custom_adam}
+# custom_objects = {'CustomAdam': custom_adam}
 
-model = load_model('keras_model.h5', custom_objects=custom_objects)
+model = load_model('keras_model.h5', compile = False)
 
 #Testing part 
 

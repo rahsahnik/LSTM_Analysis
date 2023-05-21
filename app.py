@@ -15,7 +15,7 @@ enddate  = '2022-12-20'
 # data = pdr.get_data_yahoo('TCS', start=startdate,  end=enddate)
 # data.head()
 
-st.title('Stock Trend Precdiction')
+st.title('Stock Trend Prediction')
 
 user_input = st.text_input('Enter Stock Ticker', 'TCS')
 data = pdr.get_data_yahoo(user_input, start=startdate,  end=enddate)
@@ -85,7 +85,7 @@ y_test = y_test * scale_factor
 
 #Final Vizualization
 
-st.subheader('Prediction vs Origianl')
+st.subheader('Prediction vs Original')
 fig2 = plt.figure(figsize=(12,6))
 plt.plot(y_test, 'b', label = 'Original Price')
 plt.plot(y_predicted, 'r', label = 'Predicted Price')
